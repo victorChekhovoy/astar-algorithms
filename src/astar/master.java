@@ -1,5 +1,8 @@
 package astar;
 
-public class master {
-
+public class Master {
+	
+	public static void main(String[] args) {
+		
+	}
 }
