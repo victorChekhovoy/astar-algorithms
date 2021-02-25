@@ -6,11 +6,11 @@ public class Node {
 	private int x, y;
 	private ArrayList<Node> neighbors;
 	
-	public void Node(int xPos, int yPos) {
+	public Node(int xPos, int yPos) {
 		this.x = xPos;
 		this.y = yPos;
 	}
-	
+
 	public int getX() {
 		return x;
 	}
