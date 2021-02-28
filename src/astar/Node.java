@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 public class Node {
 	private int x, y;
-	private double dist = Double.POSITIVE_INFINITY;
+	private double dist = Double.POSITIVE_INFINITY; //total distance f(n) = 
 	private ArrayList<Node> neighbors;
 	private Node parent;
+	private double difficulty;
 	
 	public Node(int xPos, int yPos) {
 		this.x = xPos;
@@ -60,6 +61,14 @@ public class Node {
 
 	public void setParent(Node parent) {
 		this.parent = parent;
+	}
+
+	public double getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
 	}
 	
 }
