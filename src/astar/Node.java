@@ -9,6 +9,7 @@ public class Node {
 	public Node(int xPos, int yPos) {
 		this.x = xPos;
 		this.y = yPos;
+		neighbors = new ArrayList<Node>();
 	}
 
 	public int getX() {

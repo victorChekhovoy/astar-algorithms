@@ -10,7 +10,7 @@ public class Master {
 		//run A* on graph
 		   // which will involve calls to Heuristic
 		Node_comparator nc = new Node_comparator(target);
-	    PriorityQueue pq = new PriorityQueue<Node>(INITIAL_CAPACITY, nc);
+	    PriorityQueue<Node> pq = new PriorityQueue<Node>(INITIAL_CAPACITY, nc);
 
 	}
 }

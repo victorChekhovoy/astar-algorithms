@@ -1,9 +1,7 @@
 package astar;
 
-import java.util.LinkedList;
-
 public class Graph {
-    public Node[][] space;
+    private Node[][] space;
 
     public Graph(int xSize, int ySize) {
         space = new Node[xSize][ySize];
