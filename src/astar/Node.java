@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class Node {
 	private int x, y;
+	private double dist = Double.POSITIVE_INFINITY;
 	private ArrayList<Node> neighbors;
+	private Node parent;
 	
 	public Node(int xPos, int yPos) {
 		this.x = xPos;
@@ -42,6 +44,22 @@ public class Node {
 	
 	public void setNeighbors(ArrayList<Node> neighbors) {
 		this.neighbors = neighbors;
+	}
+
+	public double getDist() {
+		return dist;
+	}
+
+	public void setDist(double dist) {
+		this.dist = dist;
+	}
+
+	public Node getParent() {
+		return parent;
+	}
+
+	public void setParent(Node parent) {
+		this.parent = parent;
 	}
 	
 }
