@@ -15,6 +15,7 @@ public class Node_comparator implements Comparator<Node>{
 		 //-1 if n1 is closer, 0 if equal distance, 1 if n2 is closer. 
 		int distance_1 = Heuristic.manhattanHeuristic(n1, target);
 		int distance_2 = Heuristic.manhattanHeuristic(n2, target);
+		// we should probably make this not heuristic dependent, so that we can easily change
 		return distance_1 - distance_2;
 	}
 
