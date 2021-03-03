@@ -44,9 +44,6 @@ public class ReadFile {
 			target[0] = Integer.parseInt((String) targetString.subSequence(1, divide));
 			target[1] = Integer.parseInt((String) targetString.substring(divide+1, end));
 			
-			System.out.println(start[0] + ", " + start[1]);
-			System.out.println(target[0] + ", " + target[1]);
-			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
