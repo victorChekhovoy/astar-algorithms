@@ -12,6 +12,7 @@ public class Node {
 	public Node(int xPos, int yPos) {
 		this.x = xPos;
 		this.y = yPos;
+		this.difficulty = 1;
 		neighbors = new ArrayList<Node>();
 	}
 
@@ -69,6 +70,10 @@ public class Node {
 
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
+	}
+	
+	public String toString() {
+		return "(" + this.getX() + ", " + this.getY() + ")";
 	}
 	
 }

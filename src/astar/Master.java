@@ -1,6 +1,7 @@
 package astar;
 
 import java.util.PriorityQueue;
+import java.util.Stack;
 import java.util.ArrayList;
 
 public class Master {
@@ -26,10 +27,11 @@ public class Master {
 	  		}
 	  		edges = current.getNeighbors();
 	  		//for each of the nodes next to current
-	  		for (int i=0; i < edges.size(); i++) {
+	  		for (int i = 0; i < edges.size(); i++) {
 	  			Node nextNode = edges.get(i);
 	  			double newDist = current.getDist() + nextNode.getDifficulty() + Heuristic.manhattanHeuristic(current, target);
 	  			if(nextNode.getDist() > newDist) {
+	  				System.out.print("HI");
 	  				nextNode.setParent(current);
 	  				discovered.remove(nextNode);
 	  				//set the node's distance to its h(n) + g(n) (exact distance from start + heuristic distance)
@@ -39,5 +41,11 @@ public class Master {
 	  		}
 	  	}	
 	    //interpret final path from the final node's ancestors
+	  	Stack<Node> path = new Stack<Node>();
+	  	while (current.getParent() != null) {
+	  		path.add(current);
+	  		current = current.getParent();
+	  	}
+	  	System.out.println("Path: " + path.toString());
 	}
 }
