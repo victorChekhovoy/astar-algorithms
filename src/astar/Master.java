@@ -15,10 +15,8 @@ public class Master {
 		Node_comparator nc = new Node_comparator(target);
 	    PriorityQueue<Node> discovered = new PriorityQueue<Node>(INITIAL_CAPACITY, nc);
 	    //convert data file to graph <- Data file is read on line 12 right now.
-	    
 	    Node current = file.getGraph().getSpace()[file.getStart()[0]][file.getStart()[1]];
 	    discovered.add(current);
-	    
 	    ArrayList<Node> edges;
 	  	while (discovered.size() > 0) {
 	  		current = discovered.poll();
@@ -30,8 +28,6 @@ public class Master {
 	  		//for each of the nodes next to current
 	  		for (int i=0; i < edges.size(); i++) {
 	  			Node nextNode = edges.get(i);
-
-		  		System.out.print("hi");
 	  			double newDist = current.getDist() + nextNode.getDifficulty() + Heuristic.manhattanHeuristic(current, target);
 	  			if(nextNode.getDist() > newDist) {
 	  				nextNode.setParent(current);
