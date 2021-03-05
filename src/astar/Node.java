@@ -13,6 +13,7 @@ public class Node {
 		this.x = xPos;
 		this.y = yPos;
 		neighbors = new ArrayList<Node>();
+		difficulty = 1;
 	}
 
 	public int getX() {
