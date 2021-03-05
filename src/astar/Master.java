@@ -32,9 +32,11 @@ public class Master {
 	  			Node nextNode = edges.get(i);
 
 		  		System.out.print("hi");
-	  			double newDist = current.getDist() + nextNode.getDifficulty() + Heuristic.manhattanHeuristic(current, target);
-	  			if(nextNode.getDist() > newDist) {
+	  			double newDist = current.getDist() + nextNode.getDifficulty();
+	  			double newTotCost = newDist + Heuristic.manhattanHeuristic(current, target);
+	  			if(nextNode.getTotCost() > newTotCost) {
 	  				nextNode.setParent(current);
+	  				nextNode.setDist(newDist);
 	  				discovered.remove(nextNode);
 	  				//set the node's distance to its h(n) + g(n) (exact distance from start + heuristic distance)
 		  			nextNode.setDist(current.getDist() + nextNode.getDifficulty() + Heuristic.manhattanHeuristic(current, target));

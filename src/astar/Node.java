@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class Node {
 	private int x, y;
-	private double dist = Double.POSITIVE_INFINITY; //total distance f(n) = 
+	private double dist = Double.POSITIVE_INFINITY;  //distance from start g(n)
+	private double totCost = Double.POSITIVE_INFINITY; //total distance f(n) = g(n) + h(n)
 	private ArrayList<Node> neighbors;
 	private Node parent;
-	private double difficulty;
+	private double difficulty; //cost of traversing this node (set to 1 for all passible nodes in this basic case)
 	
 	public Node(int xPos, int yPos) {
 		this.x = xPos;
@@ -70,6 +71,14 @@ public class Node {
 
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
+	}
+
+	public double getTotCost() {
+		return totCost;
+	}
+
+	public void setTotCost(double totCost) {
+		this.totCost = totCost;
 	}
 	
 }
