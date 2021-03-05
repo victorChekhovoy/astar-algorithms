@@ -12,7 +12,7 @@ public class Master {
     	ReadFile file = new ReadFile("graph.txt");
     	Node target = file.getGraph().getSpace()[file.getTarget()[0]][file.getTarget()[1]];
 		//Node target = new Node(1, 1); //assign to target from input
-		Node_comparator nc = new Node_comparator(target);
+		Node_comparator nc = new Node_comparator();
 	    PriorityQueue<Node> discovered = new PriorityQueue<Node>(INITIAL_CAPACITY, nc);
 	    //convert data file to graph <- Data file is read on line 12 right now.
 	    Node current = file.getGraph().getSpace()[file.getStart()[0]][file.getStart()[1]];
