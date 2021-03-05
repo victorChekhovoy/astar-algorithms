@@ -15,11 +15,15 @@ import java.util.Scanner;
 public class ReadFile {
 	
 	private Graph graph;
+	private String fileName;
 	private int start[];
 	private int target[];
 	
-	public ReadFile(String fileName) {
-		File graphText = new File(fileName);
+	public ReadFile() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("What is the name of the text file with the graph? \nPlease read README.md if you're confused about formattting.");
+		
+		File graphText = new File(input.nextLine());
 		Scanner graphReader;
 		
 		try {

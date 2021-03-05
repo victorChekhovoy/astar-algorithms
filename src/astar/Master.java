@@ -11,7 +11,7 @@ public class Master {
 	
     public static void main(String[] args) {
     	
-    	ReadFile file = new ReadFile("graph.txt");
+    	ReadFile file = new ReadFile();
     	Node target = file.getGraph().getSpace()[file.getTarget()[0]][file.getTarget()[1]];
 		//Node target = new Node(1, 1); //assign to target from input
 		Node_comparator nc = new Node_comparator();
@@ -49,10 +49,14 @@ public class Master {
 	  	}	
 	    //interpret final path from the final node's ancestors
 	  	Stack<Node> path = new Stack<Node>();
+	  	path.add(current);
 	  	while (current.getParent() != null) {
-	  		path.add(current);
 	  		current = current.getParent();
+	  		path.add(current);
 	  	}
-	  	System.out.println("Path: " + path.toString());
+	  	System.out.println("Your path from (" + file.getStart()[0] + ", " + file.getStart()[1] + ") to (" + file.getTarget()[0] + ", " + file.getTarget()[1] + "): \n");
+	  	for (int i = path.size()-1; i >= 0; i--) {
+	  		System.out.println(path.size()-i + ". " + path.get(i));
+	  	}
 	}
 }
