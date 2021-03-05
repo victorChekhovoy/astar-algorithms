@@ -12,7 +12,7 @@ public class Node_comparator implements Comparator<Node>{
 		//returns a negative number (-1) if node 1 is closer
 		//returns a positive number (+1) if node 2 is closer
 		// returns 0 if the nodes are at equal distance from the destination
-		return (int) (n1.getDist() - n2.getDist());
+		return (int) (n1.getTotCost() - n2.getTotCost());
 	}
 
 }
