@@ -17,6 +17,7 @@ public class Master {
 	    PriorityQueue<Node> discovered = new PriorityQueue<Node>(INITIAL_CAPACITY, nc);
 	    //convert data file to graph <- Data file is read on line 12 right now.
 	    Node current = file.getGraph().getSpace()[file.getStart()[0]][file.getStart()[1]];
+	    current.setDist(0);
 	    discovered.add(current);
 	    ArrayList<Node> edges;
 	  	while (discovered.size() > 0) {
