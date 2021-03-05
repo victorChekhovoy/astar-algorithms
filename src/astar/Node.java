@@ -14,6 +14,7 @@ public class Node {
 		this.y = yPos;
 		this.difficulty = 1;
 		neighbors = new ArrayList<Node>();
+		difficulty = 1;
 	}
 
 	public int getX() {
