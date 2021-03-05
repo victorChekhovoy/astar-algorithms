@@ -3,6 +3,7 @@ package astar;
 import java.util.PriorityQueue;
 import java.util.Stack;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Master {
     
@@ -20,8 +21,10 @@ public class Master {
 	    current.setDist(0);
 	    discovered.add(current);
 	    ArrayList<Node> edges;
+	    HashMap<Node, Integer> explored = new HashMap<Node, Integer>();
 	  	while (discovered.size() > 0) {
 	  		current = discovered.poll();
+	  		explored.put(current, 1);
 	  		if (current == target) 
 	  		{
 	  			break;
@@ -30,11 +33,10 @@ public class Master {
 	  		//for each of the nodes next to current
 	  		for (int i = 0; i < edges.size(); i++) {
 	  			Node nextNode = edges.get(i);
-
-		  		//System.out.print("hi");
+	  			
 	  			double newDist = current.getDist() + nextNode.getDifficulty();
 	  			double newTotCost = newDist + Heuristic.manhattanHeuristic(current, target);
-	  			if(nextNode.getTotCost() > newTotCost) {
+	  			if((nextNode.getTotCost() > newTotCost) && !explored.containsKey(nextNode)) {
 	  				nextNode.setParent(current);
 	  				nextNode.setDist(newDist);
 	  				discovered.remove(nextNode);
