@@ -13,6 +13,7 @@ public class Node {
 	public Node(int xPos, int yPos) {
 		this.x = xPos;
 		this.y = yPos;
+		this.difficulty = 1;
 		neighbors = new ArrayList<Node>();
 		difficulty = 1;
 	}
@@ -79,6 +80,10 @@ public class Node {
 
 	public void setTotCost(double totCost) {
 		this.totCost = totCost;
+	}
+	
+	public String toString() {
+		return "(" + this.getX() + ", " + this.getY() + ")";
 	}
 	
 }
