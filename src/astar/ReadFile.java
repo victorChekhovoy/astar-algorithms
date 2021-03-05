@@ -35,7 +35,7 @@ public class ReadFile {
 				int next = graphReader.nextInt();
 				if (next == 0) {
 					//System.out.print("(" + count % xSize + ", " + count / xSize + ") ");
-					graph.addNode(count % xSize, count / xSize);
+					graph.addNode(count / xSize, count % xSize);
 				}
 				count++;
 			}
