@@ -5,6 +5,7 @@ This is an implementation of the A* pathfinding algorithm created by Danielle Bo
 ## Getting Started
 
 Once you've unzipped the file with the java programs, you'll want to run Master.java. You'll need a text file as an input and it should be formated like this:
+Please note that (0,0) is the top left hand corner. So (x-size, y-size) is the bottom right.
 
 ```
 (Starting-x-cord, Starting-y-cord)  
