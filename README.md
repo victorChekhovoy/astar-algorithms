@@ -12,7 +12,7 @@ Once you've unzipped the file with the java programs, you'll want to run Master.
   
 x-size y-size  
   
-** Insert Graph here, where 0s are open spaces, and 1s are walls **
+** Insert Graph here, where 0s are walls and any other number between 1 and 10 is an open space where the number is the diffuclty. This simulates terrain difficulty.**
 ```
 
 Here is an example of what that should look like:
@@ -23,10 +23,10 @@ Here is an example of what that should look like:
   
  4 4
   
- 0 0 1 0
- 0 0 1 0
- 0 1 1 0
- 0 0 0 0
+ 1 2 0 1
+ 1 3 0 1
+ 1 0 0 1
+ 1 1 1 1
 ```
 
 The file returns the optimal path of nodes from start to target via a text line.
