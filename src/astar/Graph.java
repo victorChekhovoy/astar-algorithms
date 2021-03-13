@@ -7,9 +7,9 @@ public class Graph {
         space = new Node[xSize][ySize];
     }
 
-    public void addNode(int xPos, int yPos){
+    public void addNode(int xPos, int yPos, int difficulty){
     	//Add a new node in the given position
-    	space[xPos][yPos] = new Node(xPos, yPos);
+    	space[xPos][yPos] = new Node(xPos, yPos, difficulty);
     	
     	
     	//Check if there is a node left of this one, if so add connections to both nodes

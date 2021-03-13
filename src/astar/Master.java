@@ -49,14 +49,17 @@ public class Master {
 	  	}	
 	    //interpret final path from the final node's ancestors
 	  	Stack<Node> path = new Stack<Node>();
+	  	int totalCost = (int) current.getDifficulty();
 	  	path.add(current);
 	  	while (current.getParent() != null) {
 	  		current = current.getParent();
 	  		path.add(current);
+	  		totalCost+= current.getDifficulty();
 	  	}
-	  	System.out.println("Your path from (" + file.getStart()[0] + ", " + file.getStart()[1] + ") to (" + file.getTarget()[0] + ", " + file.getTarget()[1] + "): \n");
+	  	System.out.println("Your path from (" + file.getStart()[0] + ", " + file.getStart()[1] + ") to (" + file.getTarget()[0] + ", " + file.getTarget()[1] + "):");
 	  	for (int i = path.size()-1; i >= 0; i--) {
 	  		System.out.println(path.size()-i + ". " + path.get(i));
 	  	}
+	  	System.out.println("The cost of the quickest path is: " + totalCost);
 	}
 }

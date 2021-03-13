@@ -15,7 +15,6 @@ import java.util.Scanner;
 public class ReadFile {
 	
 	private Graph graph;
-	private String fileName;
 	private int start[];
 	private int target[];
 	
@@ -37,9 +36,9 @@ public class ReadFile {
 			int count = 0;
 			while (graphReader.hasNext()) {
 				int next = graphReader.nextInt();
-				if (next == 0) {
+				if (next != 0) {
 					//System.out.print("(" + count % xSize + ", " + count / xSize + ") ");
-					graph.addNode(count / xSize, count % xSize);
+					graph.addNode(count % xSize, count / xSize, next);
 				}
 				count++;
 			}
@@ -49,13 +48,16 @@ public class ReadFile {
 			
 			int divide = startString.indexOf(',');
 			int end = startString.indexOf(')');
-			start[1] = Integer.parseInt((String) startString.subSequence(1, divide));
-			start[0] = Integer.parseInt((String) startString.substring(divide+1, end));
+			start[0] = Integer.parseInt((String) startString.subSequence(1, divide));
+			start[1] = Integer.parseInt((String) startString.substring(divide+1, end));
 			
 			divide = targetString.indexOf(',');
 			end = targetString.indexOf(')');
-			target[1] = Integer.parseInt((String) targetString.subSequence(1, divide));
-			target[0] = Integer.parseInt((String) targetString.substring(divide+1, end));
+			target[0] = Integer.parseInt((String) targetString.subSequence(1, divide));
+			target[1] = Integer.parseInt((String) targetString.substring(divide+1, end));
+			
+			input.close();
+			graphReader.close();
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

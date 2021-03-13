@@ -8,14 +8,13 @@ public class Node {
 	private double totCost = Double.POSITIVE_INFINITY; //total distance f(n) = g(n) + h(n)
 	private ArrayList<Node> neighbors;
 	private Node parent;
-	private double difficulty; //cost of traversing this node (set to 1 for all passible nodes in this basic case)
+	private int difficulty; //cost of traversing this node (set to 1 for all passible nodes in this basic case)
 	
-	public Node(int xPos, int yPos) {
+	public Node(int xPos, int yPos, int difficulty) {
 		this.x = xPos;
 		this.y = yPos;
-		this.difficulty = 1;
+		this.difficulty = difficulty;
 		neighbors = new ArrayList<Node>();
-		difficulty = 1;
 	}
 
 	public int getX() {
