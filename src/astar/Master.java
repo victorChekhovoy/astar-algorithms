@@ -78,6 +78,6 @@ public class Master {
 	  		System.out.println(path.get(i));
 	  		
 	  	}
-	  	System.out.println("The cost of the quickest path is: " + totalCost);
+	  	System.out.println("\nThe cost of the quickest path is: " + totalCost);
 	}
 }
