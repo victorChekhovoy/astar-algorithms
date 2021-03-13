@@ -1,3 +1,7 @@
+/* Our Heuristic is a simple class that uses the Manhattan distance with 2 dimensions
+ * to estimate the best path in A*. The dx and dy values are the difference between
+ * the nodes' locations.
+ */
 package astar;
 
 public class Heuristic {
@@ -5,9 +9,6 @@ public class Heuristic {
 		//start and target should be Node objects
 		int dx = Math.abs(start.getX() - target.getX());
 		int dy = Math.abs(start.getY() - target.getY());
-		int dz = (int) Math.abs(start.getDifficulty() - target.getDifficulty());
-		return dx + dy + dz;
-		//Usually the Manhattan Distance has D * (dx + dy) where D is a scale.
-		//Not quite sure what that means exactly right now, I'm assuming just 1?
+		return dx + dy;
 	}
 }

@@ -1,3 +1,8 @@
+/* Node is a location on our graph, it stores all the location about like its difficulty and location.
+ * We also have a spot for the parent and where the parent is in relation to keep track of our path
+ * when the A* algorithm is actually running.
+ */
+
 package astar;
 
 import java.util.ArrayList;
@@ -8,6 +13,7 @@ public class Node {
 	private double totCost = Double.POSITIVE_INFINITY; //total distance f(n) = g(n) + h(n)
 	private ArrayList<Node> neighbors;
 	private Node parent;
+	private char parentDirection; //w = up, a = left, s = down, d = right
 	private int difficulty; //cost of traversing this node (set to 1 for all passible nodes in this basic case)
 	
 	public Node(int xPos, int yPos, int difficulty) {
@@ -63,6 +69,15 @@ public class Node {
 
 	public void setParent(Node parent) {
 		this.parent = parent;
+		if (this.parent.getY() > this.getY()) {
+			this.parentDirection = 's';
+		} else if (this.parent.getY() < this.getY()) {
+			this.parentDirection = 'w';
+		} else if (this.parent.getX() > this.getX()) {
+			this.parentDirection = 'd';
+		} else if (this.parent.getX() < this.getX()) {
+			this.parentDirection = 'a';
+		}
 	}
 
 	public double getDifficulty() {
@@ -84,5 +99,15 @@ public class Node {
 	public String toString() {
 		return "(" + this.getX() + ", " + this.getY() + ")";
 	}
+
+	public char getParentDirection() {
+		return parentDirection;
+	}
+
+	public void setParentDirection(char parentDirection) {
+		this.parentDirection = parentDirection;
+	}
+	
+	
 	
 }

@@ -1,5 +1,4 @@
-/*
- * ReadFile is responsible reading a graph with a start and target and then running A* on it.
+/* ReadFile is responsible reading a graph with a start and target and then running A* on it.
  * See graph.txt for an example on how this text file with that information is formatted.
  * It creates all nodes (and ignores walls) and creates the necessary edges between them.
  * It also parses the start and target information so we can later in Master actually assign that to a node.

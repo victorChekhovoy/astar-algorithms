@@ -1,3 +1,6 @@
+/* Graph is a class that keeps track of all our nodes. It's what determines
+ * what a node's neighbors are and assigns the neighbors, too.
+ */
 package astar;
 
 public class Graph {

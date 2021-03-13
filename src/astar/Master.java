@@ -1,3 +1,8 @@
+/* Master is our class with the main function in it. It's what actually stores the
+ * A* algorithm. We start by calling ReadFile to create our graph and then run the
+ * A* algorithm. We finish by tracing back our path and the directions needed to
+ * get to that path to make it easier for the user.
+ */
 package astar;
 
 import java.util.PriorityQueue;
@@ -56,9 +61,22 @@ public class Master {
 	  		path.add(current);
 	  		totalCost+= current.getDifficulty();
 	  	}
-	  	System.out.println("Your path from (" + file.getStart()[0] + ", " + file.getStart()[1] + ") to (" + file.getTarget()[0] + ", " + file.getTarget()[1] + "):");
+	  	System.out.println("Your path from (" + file.getStart()[0] + ", " + file.getStart()[1] + ") to (" + file.getTarget()[0] + ", " + file.getTarget()[1] + "):\n");
 	  	for (int i = path.size()-1; i >= 0; i--) {
-	  		System.out.println(path.size()-i + ". " + path.get(i));
+	  		System.out.print(path.size()-i + ". ");
+	  		if (path.get(i).getParentDirection() == 's') {
+	  			System.out.print("Go up to ");
+	  		} else if (path.get(i).getParentDirection() == 'w') {
+	  			System.out.print("Go down to ");
+	  		} else if (path.get(i).getParentDirection() == 'a') {
+	  			System.out.print("Go right to ");
+	  		} else if (path.get(i).getParentDirection() == 'd') {
+	  			System.out.print("Go left to ");
+	  		} else {
+	  			System.out.print("Start at ");
+	  		}
+	  		System.out.println(path.get(i));
+	  		
 	  	}
 	  	System.out.println("The cost of the quickest path is: " + totalCost);
 	}
