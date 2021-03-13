@@ -32,7 +32,15 @@ Here is an example of what that should look like:
 
 The file returns the optimal path of nodes from start to target via a text line along with the cost of the path. The cost includes the starting and ending nodes.
 
-## Acknowledgments
-
-* Layla Oesper, our professor who assisted us with this project.
+## How each part works  
+### ReadFile  
+ReadFile is responsible reading a graph with a start and target and then running A* on it. See graph.txt for an example on how this text file with that information is formatted. It creates all nodes (and ignores walls) and creates the necessary edges between them. It also parses the start and target information so we can later in Master actually assign that to a node.
+### Node  
+Node is a location on our graph, it stores all the location about like its difficulty and location. We also have a spot for the parent and where the parent is in relation to keep track of our path when the A* algorithm is actually running.
+### Graph  
+Graph is a class that keeps track of all our nodes. It's what determines what a node's neighbors are and assigns the neighbors, too.
+### Heuristic  
+Our Heuristic is a simple class that uses the Manhattan distance with 2 dimensions to estimate the best path in A*. The dx and dy values are the difference between the nodes' locations.
+### Master  
+Master is our class with the main function in it. It's what actually stores the A* algorithm. We start by calling ReadFile to create our graph and then run the A* algorithm. We finish by tracing back our path and the directions needed to get to that path to make it easier for the user.
 
