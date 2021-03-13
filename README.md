@@ -4,7 +4,9 @@ This is an implementation of the A* pathfinding algorithm created by Danielle Bo
 
 ## Getting Started
 
-Once you've unzipped the file with the java programs, you'll want to run Master.java. Please note that (0,0) is the top left hand corner. So (x-size, y-size) is the bottom right. You'll need a text file as an input and it should be formated like this:
+Once you've unzipped the file with the java programs, you'll want to run Master.java.  
+Please note that (0,0) is the top left hand corner and (x-size, y-size) is the bottom right.  
+You'll need a text file as an input and it should be formated like this:
 
 
 ```
@@ -13,7 +15,7 @@ Once you've unzipped the file with the java programs, you'll want to run Master.
   
 x-size y-size  
   
-** Insert Graph here, where 0s are walls and any other number between 1 and 10 is an open space where the number is the diffuclty. This simulates terrain difficulty.**
+** Insert Graph here, where 0s are walls and any other number between 1 and 10 is an open space where the number is the difficulty. This simulates terrain difficulty.**
 ```
 
 Here is an example of what that should look like:
@@ -30,7 +32,8 @@ Here is an example of what that should look like:
  1 1 1 1
 ```
 
-The file returns the optimal path of nodes from start to target via a text line along with the cost of the path. The cost includes the starting and ending nodes.
+The file returns the optimal path of nodes from start to target via a text line along with the cost of the path. The cost includes the starting and ending nodes.  
+There are a couple of example files provided to use in case you don't want to make your own.
 
 ## How each part works  
 ### ReadFile  
